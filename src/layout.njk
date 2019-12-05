@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ page_description }}">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/app.scss">
+    <title>Distrix - {{ page_title }}</title>
+</head>
+<body>
+    {% set pages = [
+        {
+            name: 'Comment ça marche',
+            path: '/index.njk#start'
+        },
+        {
+            name: 'Espace pro',
+            path: 'http://distrix.fr/administration/clients/nouveau'
+        },
+        {
+            name: 'Devenir distributeur',
+            path: 'http://www.distrix.fr/inscription_distributeur.php'
+        },
+        {
+            name: 'Villes',
+            sub: [
+                {
+                    name: 'Montpellier',
+                    path: '/montpellier.njk'
+                }
+            ]
+        }
+    ] %}
+    {% include 'template/header/header.njk' %}
+    {% include 'template/menu/menu.njk' %}
+    {% block body %}{% endblock %}
+    {% include 'template/footer/footer.njk' %}
+    <script src="https://kit.fontawesome.com/9f41b0cefe.js" crossorigin="anonymous"></script>
+    <script src="/app.js"></script>
+</body>
+</html>

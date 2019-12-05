@@ -1,0 +1,35 @@
+{% set page_title = 'Distribution flyers Montpellier Occitanie Prospectus street marketing' %}
+{% set page_description = 'Distrix met à votre service tout son professionnalisme pour vos distributions de flyers et prospectus à Montpellier.' %}
+{% extends 'layout.njk' %}
+
+{% set city = {
+    image: '/media/img/city/montpellier.jpg',
+    name: 'Montpellier',
+    text: '<b>Distrix spécialiste de la distribution de flyers à Montpellier</b><br>
+    <br>
+    Distrix met à votre service tout son professionnalisme pour vos distributions de flyers et prospectus à Montpellier.<br>
+    <br>
+    <b>Vos créations de flyers et prospectus</b><br>
+    <br>
+    Distrix vous propose son outil professionnel de création de flyer en ligne pour vous vous faire gagner du temps, vous pouvez aussi télécharger vos propres créations, ou demander à nos graphistes de travailler sur un design personnalisé et unique.<br>
+    <br>
+    <b>La distribution de flyers et prospectus à Montpellier et sa région.</b><br>
+    <br>
+    Montpellier est la deuxième plus grande ville de la région Occitanie, ancienne capitale du Languedoc-Roussillon, forte d’une métropole qui compte plus de 460 000 habitants et connu pour ses célèbres universités.<br>
+    <br>
+    Pour tous vos projets de communication de prospectus et de flyers l’équipe professionnel distrix est à votre service.<br>
+    <br>
+    Profiter pleinement du Dynamisme économique de Montpellier et sa région, nous pouvons intervenir sur :<br>
+    <br>
+    Montpellier
+    <br>
+    Nimes
+    <br>
+    La Grande Motte
+    <br>
+    Beziers…'
+} %}
+
+{% block body %}
+    {% include 'template/city/content/content.njk' %}
+{% endblock %}

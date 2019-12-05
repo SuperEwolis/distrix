@@ -1,0 +1,39 @@
+<header class="Header">
+    <div class="container-fluid">
+
+        <div>
+            <a href="/index.njk">
+                <img class="Header__logo" src="/media/img/logo.png" alt="Distrix-logo">
+            </a>
+        </div>
+
+        <div>
+
+            {% for page in pages %}
+                <div class="Header__nav">
+
+                    <a class="Header__nav__link{% if page.sub is not defined %} without-sub{% endif %}" href="{{ page.path }}">
+                        {{ page.name }}
+                        {% if page.sub is defined %}
+                            <div class="Header__nav__link__dropicon"></div>
+                        {% endif %}
+                    </a>
+
+                    {% if page.sub is defined %}
+                        <div class="Header__nav__dropdown">
+                            {% for sub in page.sub %}
+                                <a class="Header__nav__sub" href="{{ sub.path }}">
+                                    {{ sub.name }}
+                                </a>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+            <a class="Header__burger" href="#" id="menu-open">
+                <i class="fas fa-bars"></i>
+            </a>
+        </div>
+    </div>
+</header>

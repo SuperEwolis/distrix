@@ -1,0 +1,75 @@
+.City-content {
+
+    &__hero {
+        background: linear-gradient(to bottom, $color-main, darken($color-main, 20%));
+
+        &__image {
+            top: $header-height;
+            position: relative;
+            padding-top: 50%;
+            border-radius: $border-radius;
+            background-position: center;
+            background-size: cover;
+            overflow: hidden;
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: darken($color-main,40%);
+                opacity: .3;
+            }
+
+            &__title {
+                margin: 0;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                span {
+                    $ls: .25em;
+                    display: block;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    color: #fff;
+                    border: 2px solid rgba(#fff,.5);
+                    letter-spacing: $ls;
+                    padding: .3em .5em;
+                    padding-left: .5em + $ls;
+                    font-size: 2.8rem;
+                    @include media-breakpoint-down(md) { font-size: 2.2rem }
+                    @include media-breakpoint-down(sm) { font-size: 1.8rem }
+                    @include media-breakpoint-down(xs) {  }
+                }
+            }
+        }
+    }
+
+    &__text {
+        margin-top: $header-height;
+        text-align: center;
+        line-height: 2em;
+
+        @include media-breakpoint-up(lg) {
+            padding: $spacer*4 0;
+            font-size: 1.1rem;
+        }
+        @include media-breakpoint-down(lg) {
+            padding: $spacer*2 0;
+            font-size: 1rem;
+        }
+        @include media-breakpoint-down(md) {
+            font-size: .9rem;
+        }
+        @include media-breakpoint-down(sm) {  }
+        @include media-breakpoint-down(xs) {  }
+    }
+}

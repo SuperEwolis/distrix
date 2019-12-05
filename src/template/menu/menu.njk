@@ -1,0 +1,37 @@
+<div class="Menu" id="menu">
+
+    <a class="Menu__close" id="menu-close">
+        <i class="fas fa-times"></i>
+    </a>
+
+    <div>
+
+        <div class="Menu__nav">
+
+            <a class="Menu__nav__link" href="/index.njk">
+                Accueil
+            </a>
+        </div>
+
+        {% for page in pages %}
+            <div class="Menu__nav">
+
+                <a class="Menu__nav__link" href="{{ page.path }}">
+                    {{ page.name }}
+                </a>
+
+                {% if page.sub is defined %}
+                    <div class="Menu__nav__dropdown">
+                        {% for sub in page.sub %}
+                            <div>
+                                <a class="Menu__nav__sub" href="{{ sub.path }}">
+                                    {{ sub.name }}
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</div>

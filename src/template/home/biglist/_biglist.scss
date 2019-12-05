@@ -1,0 +1,98 @@
+.Home-biglist {
+    padding: $spacer*5 0;
+    @include media-breakpoint-down(sm) { padding: $spacer*2 0 }
+
+    .row { align-items: center }
+
+    &.with-background { background-color: rgba(#000,.05) }
+
+    &__text {
+        padding-right: $spacer*5;
+        @include media-breakpoint-down(sm) { padding: 0 }
+
+        &__title {
+            font-weight: 300;
+            margin: 0;
+            @include media-breakpoint-up(lg) { font-size: 2.5rem }
+            @include media-breakpoint-down(lg) { font-size: 2.3rem }
+            @include media-breakpoint-down(md) { font-size: 1.8rem }
+            @include media-breakpoint-down(sm) { font-size: 1.2rem }
+            @include media-breakpoint-down(xs) {  }
+        }
+
+        &__subtitle {
+            display: flex;
+            align-items: flex-start;
+            font-weight: 400;
+            margin: 0;
+            * + & {
+                margin-top: .5em;
+                @include media-breakpoint-down(sm) { margin-top: .75em }
+            }
+
+            @include media-breakpoint-up(lg) { font-size: 1.3rem }
+            @include media-breakpoint-down(lg) { font-size: 1.2rem }
+            @include media-breakpoint-down(md) { font-size: 1rem }
+            @include media-breakpoint-down(sm) { font-size: .8rem }
+            @include media-breakpoint-down(xs) {  }
+
+
+            &__index {
+                background-color: $color-alt;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+                flex-shrink: 0;
+
+                @mixin size($size) {
+                    width: $size;
+                    height: $size;
+                    border-radius: $size;
+                    font-size: $size*.6;
+                    margin-right: $size*.25;
+                }
+
+                @include media-breakpoint-up(lg) { @include size(30px) }
+                @include media-breakpoint-down(lg) { @include size(26px) }
+                @include media-breakpoint-down(md) { @include size(20px) }
+                @include media-breakpoint-down(sm) { @include size(15px) }
+                @include media-breakpoint-down(xs) {  }
+            }
+        }
+
+        &__regular, &__small {
+            line-height: 1.8em;
+            margin: 0;
+        }
+
+        &__regular {
+            font-size: 1rem;
+            @include media-breakpoint-down(md) { font-size: .85rem }
+            @include media-breakpoint-down(sm) { font-size: .8rem }
+            @include media-breakpoint-down(xs) {  }
+            * + & { margin-top: 1em }
+        }
+
+        &__small {
+            opacity: .7;
+            margin: 0;
+            font-size: .85rem;
+            @include media-breakpoint-down(md) { font-size: .75rem }
+            @include media-breakpoint-down(sm) { font-size: .7rem }
+            @include media-breakpoint-down(xs) {  }
+            * + & { margin-top: .75em }
+        }
+    }
+
+    &__image {
+        height: 250px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        @include media-breakpoint-down(sm) {
+            height: 150px;
+            margin-top: $spacer*2;
+        }
+    }
+}

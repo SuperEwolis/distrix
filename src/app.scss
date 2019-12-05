@@ -1,0 +1,26 @@
+// Config
+$header-height: 100px;
+$duration: .3s;
+$color-main: #4073fe;
+$color-alt: #f1524b;
+
+// Bootstrap
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+// Templates
+@import 'src/template/header/header';
+@import 'src/template/menu/menu';
+@import 'src/template/footer/footer';
+@import 'src/template/home/hero/hero';
+@import 'src/template/home/biglist/biglist';
+@import 'src/template/city/content/content';
+
+// Basic style
+
+    // Layout
+    html, body { height: 100% }
+    body { overflow-x: hidden }
+
+    // Typography
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap');
+    body { font-family: 'Open Sans', sans-serif }

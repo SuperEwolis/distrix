@@ -1,0 +1,22 @@
+<section class="City-content">
+
+    <div class="City-content__hero">
+        <div class="container">
+            <div class="City-content__hero__image" style="background-image: url('{{ city.image }}')">
+                <h1 class="City-content__hero__image__title">
+                    <span>{{ city.name }}</span>
+                </h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="City-content__text">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-9">
+                    {{ city.text | safe }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,96 @@
+.Header {
+    padding: $spacer 0;
+    position: absolute;
+    width: 100%;
+    height: $header-height;
+    font-size: 0;
+
+    [class*='container'] {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        width: auto;
+        height: $header-height*.5;
+    }
+
+    &__nav {
+        position: relative;
+        display: inline-block;
+        @include media-breakpoint-down(sm) { display: none }
+
+        &__link {
+            color: #fff !important;
+            text-transform: uppercase;
+            padding: 1em;
+            border-radius: $border-radius;
+            display: inline-flex;
+            align-items: center;
+
+            @include media-breakpoint-up(md) { font-size: .9rem }
+            @include media-breakpoint-down(md) { font-size: .8rem }
+            @include media-breakpoint-down(sm) {  }
+            @include media-breakpoint-down(xs) {  }
+
+
+            &:hover { text-decoration: none }
+            &.without-sub:hover { background-color: rgba(#fff,.1) }
+
+            &__dropicon {
+                $size: 7px;
+                margin-left: $size;
+                display : inline-block;
+                height : 0;
+                width : 0;
+                border-top : $size solid #fff;
+                border-right : $size*.5 solid transparent;
+                border-left : $size*.5 solid transparent;
+                opacity: .5;
+            }
+        }
+
+        &__dropdown {
+            background-color: darken($color-main,5%);
+            position: absolute;
+            right: 0;
+            top: 100%;
+            padding: $spacer*.5;
+            border-radius: $border-radius;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 10;
+
+            .Header__nav:hover & {
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
+
+        &__sub {
+            font-size: .9rem;
+            color: #fff !important;
+            display: block;
+            padding: .6em 1em;
+            border-radius: $border-radius;
+
+            &:hover {
+                background-color: rgba(#fff,.1);
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__burger {
+        display: none;
+        color: #fff !important;
+        text-decoration: none !important;
+        font-size: 20px;
+        background-color: rgba(#fff,.1);
+        padding: .35em .6em;
+        border-radius: $border-radius;
+        @include media-breakpoint-down(sm) { display: flex }
+    }
+}

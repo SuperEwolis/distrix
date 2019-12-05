@@ -1,0 +1,95 @@
+.Footer {
+    color: #fff;
+
+    [class*='col'] + [class*='col'] {
+        @include media-breakpoint-down(sm) { margin-top: $spacer }
+    }
+
+    &__row {
+        padding: $spacer*4 0;
+        @include media-breakpoint-down(sm) { padding: $spacer*2 0 }
+        &:nth-of-type(odd) { background-color: rgba(#000,.85) }
+        &:nth-of-type(even) { background-color: rgba(#000,.9) }
+    }
+
+    &__title {
+        font-weight: 300;
+        margin: 0;
+        opacity: .8;
+        @include media-breakpoint-up(lg) { font-size: 2rem }
+        @include media-breakpoint-down(lg) { font-size: 1.6rem }
+        @include media-breakpoint-down(md) { font-size: 1.1rem }
+        @include media-breakpoint-down(sm) {  }
+        @include media-breakpoint-down(xs) {  }
+    }
+
+    &__regular {
+        font-weight: 400;
+        opacity: .5;
+        line-height: 1.8em;
+        margin: 0;
+        @include media-breakpoint-up(lg) { font-size: 1rem }
+        @include media-breakpoint-down(lg) { font-size: .9rem }
+        @include media-breakpoint-down(md) { font-size: .8rem }
+        @include media-breakpoint-down(sm) {  }
+        @include media-breakpoint-down(xs) {  }
+
+        * + & { margin-top: 1em }
+        i, svg { margin-right: .75em }
+    }
+
+    &__social {
+        $size: 40px;
+        display: inline-block;
+        margin-top: $size*.5;
+
+        & + & { margin-left: $size*.35 }
+
+        &__icon {
+            width: $size;
+            height: $size;
+        }
+    }
+
+    &__app {
+        display: block;
+
+        & + & { margin-top: $spacer }
+
+        &__icon {
+            width: 197px;
+            height: auto;
+            @include media-breakpoint-down(sm) {
+                width: 140px
+            }
+        }
+    }
+
+    &__logo {
+        height: 50px;
+        width: auto;
+        @include media-breakpoint-up(lg) {
+            display: inline-block;
+            margin-right: $spacer;
+        }
+        @include media-breakpoint-down(lg) {
+            display: block;
+            margin-bottom: $spacer;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    &__small {
+        color: rgba(#fff,.5);
+        font-size: .8rem;
+
+        a {
+            color: #fff;
+            @include media-breakpoint-down(lg) {
+                display: block;
+                margin-top: 1em;
+            }
+        }
+    }
+}

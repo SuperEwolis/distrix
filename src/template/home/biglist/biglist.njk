@@ -1,0 +1,57 @@
+{% set lists = [
+    {
+        title: 'Faites vous connaître !',
+        subtitle: 'Prenez en main votre communication',
+        regular: 'Pour commencer, rendez-vous à cette page (ajouter hyperlink) et choisissez votre zone de distribution. Grâce au logiciel de cartographie, rien de plus simple : détourez la zone souhaitée au fil de votre souris.',
+        small: 'Distrix est une plateforme vous permettant de créer et gérer vos campagnes publicitaires de A à Z. Ce, de manière autonome et accessible pour les toutes les entreprises. Quand il est admis que la part de l\'investissement dans la Communication peut atteindre jusqu\'à 50% du chiffre d\'affaires, Distrix vous offre une opportunité de gagner en maîtrise sur votre budget. Atteignez vos prospects de manière simple, rapide et ciblée. Avec Distrix, vous êtes aux commandes de vos campagnes de communication. De la création de votre visuel jusqu\'à sa distribution en boîtes aux lettres et en passant par l\'impression, vous êtes le seul maître à bord. Faites connaître dès à présent vos futurs événements ainsi que vos nouvelles offres !'
+    },
+    {
+        title: 'Laissez parler votre créativité',
+        subtitle: 'Communiquez comme un professionnel du métier !',
+        regular: 'Avec l\'outil de création de flyers en ligne, créez votre flyer à partir de modèles ou téléchargez votre propre composition. Si vous souhaitez un flyer personnalisé, notre graphiste le réalisera.',
+        small: 'Allez plus loin dans la gestion de votre campagne. Créez totalement votre design ou à partir de modèles proposés grâce à l\'outil en ligne dédié. Vous manquez de temps ou vous n\'avez pas de graphiste sous la main : indiquez le ici (hyperlink) et nos designers se chargeront de répondre à vos attentes.'
+    },
+    {
+        title: 'Un circuit rôdé',
+        subtitle: 'De l\'Impression à la Distribution de vos prospectus',
+        regular: 'L\'équipe de Distrix travaille en étroite collaboration avec des imprimeurs afin de vous proposer un service complet et suivi. Une fois lancée, l\'impression est gérée, tracée et déposée dans un de nos boxes de stockage. Accessible immédiatement par nos équipes de distributeurs.'
+    },
+    {
+        title: 'Distribution assistée par GPS',
+        subtitle: 'Logiciel de cartographie',
+        regular: 'Grâce à un logiciel de cartographie intégré à la plateforme, nos agents sont géolocalisables à tout moment. Afin d\'assurer un suivi, rue par rue et en temps réel, pour votre distribution. En plus de cela, nous tâchons à assurer une distribution individuelle de vos prospectus et ainsi éviter les doublages avec d\'autres campagnes. Afin, de maximiser votre visibilité auprès de votre clientèle.'
+    }
+] %}
+
+{% set cls = cycler('without-background','with-background') %}
+
+{% for list in lists %}
+    <section class="Home-biglist {{ cls.next() }}"{% if loop.index == 1 %} id="start"{% endif %}>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-12">
+                    <div class="Home-biglist__text">
+
+                        <h2 class="Home-biglist__text__title">{{ list.title }}</h2>
+
+                        {% if list.subtitle is defined %}
+                            <h3 class="Home-biglist__text__subtitle">
+                                <span class="Home-biglist__text__subtitle__index">{{ loop.index }}</span>
+                                {{ list.subtitle }}
+                            </h3>
+                        {% endif %}
+
+                        <p class="Home-biglist__text__regular">{{ list.regular }}</p>
+
+                        {% if list.small is defined %}
+                            <p class="Home-biglist__text__small">{{ list.small }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-12 Home-biglist__image"
+                style="background-image: url('./media/img/home/biglist/{{ loop.index }}.png')"></div>
+            </div>
+        </div>
+    </section>
+{% endfor %}
