@@ -19,6 +19,10 @@
             padding: .3em .5em;
             padding-left: .5em + $ls;
             font-size: 2rem;
+            @include media-breakpoint-down(md) { font-size: 1.7rem }
+            @include media-breakpoint-down(sm) {  }
+            @include media-breakpoint-down(xs) {  }
+
         }
 
         &__subtitle {
@@ -26,6 +30,9 @@
             margin-top: 1em;
             line-height: 1.5em;
             opacity: .9;
+            @include media-breakpoint-down(md) { font-size: .9rem }
+            @include media-breakpoint-down(sm) {  }
+            @include media-breakpoint-down(xs) {  }
         }
 
         &__small {
@@ -40,6 +47,8 @@
         width: 100%;
         text-align: left;
         margin-top: $spacer*1.5;
+        @include media-breakpoint-down(sm) { margin-top: $spacer }
+        @include media-breakpoint-down(xs) {  }
     }
 
     &__label {
@@ -52,6 +61,8 @@
         background-color: transparent;
         resize: none;
         outline: none;
+        @include media-breakpoint-down(sm) { margin-top: 0 }
+        @include media-breakpoint-down(xs) {  }
     }
 
     &__input {
@@ -80,12 +91,13 @@
     }
 
     &__submit, &__status {
-        margin-top: $spacer*1.5;
-        margin-bottom: $spacer*1.5;
+
     }
 
     &__submit {
         display: inline-block;
+        margin-top: 2em;
+        margin-bottom: 1em;
         border-radius: $border-radius;
         padding: .8em 1.2em;
         color: #fff;
@@ -97,6 +109,8 @@
         padding: 1em;
         border-radius: $border-radius;
         display: inline-block;
+        margin-top: $spacer*1.5;
+        margin-bottom: $spacer*1.5;
 
         &.success {
             background-color: rgba($color-main,.1);
