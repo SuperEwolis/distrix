@@ -20,7 +20,7 @@
     &__nav {
         position: relative;
         display: inline-block;
-        @include media-breakpoint-down(sm) { display: none }
+        @include media-breakpoint-down(md) { display: none }
 
         &__link {
             color: #fff !important;
@@ -91,6 +91,6 @@
         background-color: rgba(#fff,.1);
         padding: .35em .6em;
         border-radius: $border-radius;
-        @include media-breakpoint-down(sm) { display: flex }
+        @include media-breakpoint-down(md) { display: flex }
     }
 }
