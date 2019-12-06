@@ -2,142 +2,55 @@
 
     <div class="Contact-form__head">
         <div class="container">
-            <h1 class="Contact-form__head__title">Contact</h1>
-            <h2 class="Contact-form__head__subtitle">Merci pour l'intérêt porté à nos services!<br>Pour demander un devis gratuit, merci de compléter et soumettre ce formulaire.<br>Nous vous contacterons le plus vite possible.</h2>
-            <p class="Contact-form__head__small">Note: Les informations fournies ne seront utilisées que pour vous contacter suite à votre demande de devis.</p>
+            <h1 class="Contact-form__head__title">{{ contact_form.text.title }}</h1>
+            <h2 class="Contact-form__head__subtitle">{{ contact_form.text.subtitle }}</h2>
+            <p class="Contact-form__head__small">{{ contact_form.text.small }}</p>
         </div>
     </div>
 
     <div class="container">
-        <form id="contact-form" action="https://formspree.io/xkngqvln" method="POST">
+        <form id="contact-form" action="{{ contact_form.form.action }}" method="POST">
 
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-2 col-md-3 col-12">
-                    <label class="Contact-form__label">Nom</label>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <input class="Contact-form__input" type="text" name="Nom" required>
-                </div>
-            </div>
+            {% for input in contact_form.form.inputs %}
+                <div class="row justify-content-center align-items-center">
 
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-2 col-md-3 col-12">
-                    <label class="Contact-form__label">Prénom</label>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <input class="Contact-form__input" type="text" name="Prénom" required>
-                </div>
-            </div>
+                    <div class="col-lg-2 col-md-3 col-12">
+                        <label class="Contact-form__label">{{ input.label }}</label>
+                    </div>
 
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-2 col-md-3 col-12">
-                    <label class="Contact-form__label">Société</label>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <input class="Contact-form__input" type="text" name="Société" required>
-                </div>
-            </div>
+                    <div class="col-lg-4 col-md-6 col-12">
 
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-2 col-md-3 col-12">
-                    <label class="Contact-form__label">Service</label>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <input class="Contact-form__input" type="text" name="Service">
-                </div>
-            </div>
+                        {% if input.type == 'text' or input.type == 'email' or input.type == 'phone' %}
 
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-2 col-md-3 col-12">
-                    <label class="Contact-form__label">Adresse 1</label>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <input class="Contact-form__input" type="text" name="Adresse 1" required>
-                </div>
-            </div>
+                            <input class="Contact-form__input"
+                            type="{{ input.type }}"
+                            name="{{ input.label }}"
+                            {% if input.required %}required{% endif %}>
 
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-2 col-md-3 col-12">
-                    <label class="Contact-form__label">Adresse 2</label>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <input class="Contact-form__input" type="text" name="Adresse 2">
-                </div>
-            </div>
+                        {% elseif input.type == 'textarea' %}
 
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-2 col-md-3 col-12">
-                    <label class="Contact-form__label">Code postal</label>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <input class="Contact-form__input" type="text" name="Code postale" required>
-                </div>
-            </div>
+                            <textarea class="Contact-form__input"
+                            rows="4"
+                            name="{{ input.label }}"
+                            {% if input.required %}required{% endif %}></textarea>
 
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-2 col-md-3 col-12">
-                    <label class="Contact-form__label">Ville</label>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <input class="Contact-form__input" type="text" name="Ville" required>
-                </div>
-            </div>
+                        {% elseif input.type == 'select' %}
 
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-2 col-md-3 col-12">
-                    <label class="Contact-form__label">Email</label>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <input class="Contact-form__input" type="email" name="E-mail" required>
-                </div>
-            </div>
-
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-2 col-md-3 col-12">
-                    <label class="Contact-form__label">Téléphone</label>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <input class="Contact-form__input" type="text" name="Téléphone" required>
-                </div>
-            </div>
-
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-2 col-md-3 col-12">
-                    <label class="Contact-form__label">Sujet</label>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <input class="Contact-form__input" type="text" name="Sujet">
-                </div>
-            </div>
-
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-2 col-md-3 col-12">
-                    <label class="Contact-form__label">Budget campagne</label>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="Contact-form__select">
-                        <select name="Budget" required>
-                            <option value="500€ - 1000 €">500€ - 1000 €</option>
-                            <option value="1000€ - 2000 €">1000€ - 2000 €</option>
-                            <option value="2000€ - 35000 €">2000€ - 35000 €</option>
-                            <option value="+ 3500 €">+ 3500 €</option>
-                        </select>
-                        <i class="Contact-form__select__icon fas fa-caret-down"></i>
+                            <div class="Contact-form__select">
+                                <select name="{{ input.label }}"
+                                {% if input.required %}required{% endif %}>
+                                    {% for option in input.options %}
+                                        <option value="{{ option }}">{{ option }}</option>
+                                    {% endfor %}
+                                </select>
+                                <i class="Contact-form__select__icon fas fa-caret-down"></i>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
-            </div>
-
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-2 col-md-3 col-12">
-                    <label class="Contact-form__label">Message</label>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <textarea class="Contact-form__input" type="text" name="Message" rows="4"></textarea>
-                </div>
-            </div>
+            {% endfor %}
 
             <button class="Contact-form__submit" id="contact-form-button">Envoyer</button>
-
             <p class="Contact-form__status" id="contact-form-status"></p>
         </form>
     </div>

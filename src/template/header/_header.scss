@@ -75,6 +75,7 @@
             display: block;
             padding: .6em 1em;
             border-radius: $border-radius;
+            white-space: nowrap;
 
             &:hover {
                 background-color: rgba(#fff,.1);
