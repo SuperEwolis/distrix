@@ -1,0 +1,13 @@
+{% set page_title = '' %}
+{% set page_description = '' %}
+{% extends 'layout.njk' %}
+
+{% set city = {
+    image: '/media/img/city/lyon.jpg',
+    name: 'Lyon',
+    text: ''
+} %}
+
+{% block body %}
+    {% include 'template/city/content/content.njk' %}
+{% endblock %}
