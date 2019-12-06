@@ -1,70 +1,70 @@
-{% set page_title = 'Contact' %}
+{% set page_title = 'Demande de devis' %}
 {% set page_description = 'Pour demander un devis gratuit, merci de compléter et soumettre ce formulaire. Nous vous contacterons le plus vite possible.' %}
 {% extends 'layout.njk' %}
 
 {% set contact_form = {
     text: {
-        title: 'Contact',
+        title: page_title,
         subtitle: 'Merci pour l\'intérêt porté à nos services!<br>Pour demander un devis gratuit, merci de compléter et soumettre ce formulaire.<br>Nous vous contacterons le plus vite possible.',
         small: 'Note: Les informations fournies ne seront utilisées que pour vous contacter suite à votre demande de devis.'
     },
     form: {
-        action: ,
+        action: 'https://formspree.io/xkngqvln',
         inputs: [
             {
                 label: 'Nom',
                 required: true,
-                type: 'text',
+                type: 'text'
             },
             {
                 label: 'Prénom',
                 required: true,
-                type: 'text',
+                type: 'text'
             },
             {
                 label: 'Société',
                 required: true,
-                type: 'text',
+                type: 'text'
             },
             {
                 label: 'Service',
                 required: false,
-                type: 'text',
+                type: 'text'
             },
             {
                 label: 'Adresse 1',
                 required: true,
-                type: 'text',
+                type: 'text'
             },
             {
                 label: 'Adresse 2',
                 required: false,
-                type: 'text',
+                type: 'text'
             },
             {
                 label: 'Code postal',
                 required: true,
-                type: 'text',
+                type: 'text'
             },
             {
                 label: 'Ville',
                 required: true,
-                type: 'text',
+                type: 'text'
             },
             {
                 label: 'E-mail',
                 required: true,
-                type: 'email',
+                type: 'email'
             },
             {
                 label: 'Téléphone',
                 required: true,
-                type: 'phone',
+                type: 'phone'
             },
             {
                 label: 'Sujet',
                 required: false,
-                type: 'text',
+                type: 'text'
             },
             {
                 label: 'Budget campagne',
@@ -80,7 +80,7 @@
             {
                 label: 'Message',
                 required: false,
-                type: 'textarea',
+                type: 'textarea'
             }
         ]
     }

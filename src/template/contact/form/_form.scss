@@ -9,7 +9,7 @@
 
         &__title {
             $ls: .25em;
-            margin-top: $spacer;
+            margin-top: 1em;
             display: inline-block;
             text-transform: uppercase;
             font-weight: 700;
@@ -27,7 +27,7 @@
 
         &__subtitle {
             font-size: 1rem;
-            margin-top: 1em;
+            margin-top: 1.5em;
             line-height: 1.5em;
             opacity: .9;
             @include media-breakpoint-down(md) { font-size: .9rem }
@@ -36,7 +36,7 @@
         }
 
         &__small {
-            font-size: .8em;
+            font-size: .7em;
             margin-top: 1em;
             opacity: .6;
             line-height: 1.5em;
@@ -53,6 +53,10 @@
 
     &__label {
         opacity: .8;
+        &__required {
+            color: red;
+            font-size: .7em;
+        }
     }
 
     &__input, &__select {

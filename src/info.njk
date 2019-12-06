@@ -1,0 +1,50 @@
+{% set page_title = 'Demande de d\'informations' %}
+{% set page_description = '' %}
+{% extends 'layout.njk' %}
+
+{% set contact_form = {
+    text: {
+        title: page_title,
+        subtitle: 'TEXT TODO',
+        small: 'Note: Les informations fournies ne seront utilisées que pour vous contacter suite à votre demande d\'informations.'
+    },
+    form: {
+        action: 'https://formspree.io/xaynpaov',
+        inputs: [
+            {
+                label: 'Nom',
+                required: true,
+                type: 'text'
+            },
+            {
+                label: 'Prénom',
+                required: true,
+                type: 'text'
+            },
+            {
+                label: 'E-mail',
+                required: true,
+                type: 'email'
+            },
+            {
+                label: 'Téléphone',
+                required: false,
+                type: 'phone'
+            },
+            {
+                label: 'Sujet',
+                required: true,
+                type: 'text'
+            },
+            {
+                label: 'Message',
+                required: true,
+                type: 'textarea'
+            }
+        ]
+    }
+} %}
+
+{% block body %}
+    {% include 'template/contact/form/form.njk' %}
+{% endblock %}

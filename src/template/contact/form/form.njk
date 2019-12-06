@@ -3,7 +3,7 @@
     <div class="Contact-form__head">
         <div class="container">
             <h1 class="Contact-form__head__title">{{ contact_form.text.title }}</h1>
-            <h2 class="Contact-form__head__subtitle">{{ contact_form.text.subtitle }}</h2>
+            <h2 class="Contact-form__head__subtitle">{{ contact_form.text.subtitle | safe }}</h2>
             <p class="Contact-form__head__small">{{ contact_form.text.small }}</p>
         </div>
     </div>
@@ -15,7 +15,10 @@
                 <div class="row justify-content-center align-items-center">
 
                     <div class="col-lg-2 col-md-3 col-12">
-                        <label class="Contact-form__label">{{ input.label }}</label>
+                        <label class="Contact-form__label">
+                            {{ input.label }}
+                            {% if input.required %}<span class="Contact-form__label__required">*</span>{% endif %}
+                        </label>
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-12">
