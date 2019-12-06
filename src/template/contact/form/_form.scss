@@ -1,0 +1,113 @@
+.Contact-form {
+    text-align: center;
+
+    &__head {
+        padding-top: $header-height;
+        background: linear-gradient(to bottom, $color-main, darken($color-main, 10%));
+        color: #fff;
+        padding-bottom: $spacer;
+
+        &__title {
+            $ls: .25em;
+            margin-top: $spacer;
+            display: inline-block;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #fff;
+            border: 2px solid rgba(#fff,.5);
+            letter-spacing: $ls;
+            padding: .3em .5em;
+            padding-left: .5em + $ls;
+            font-size: 2rem;
+        }
+
+        &__subtitle {
+            font-size: 1rem;
+            margin-top: 1em;
+            line-height: 1.5em;
+            opacity: .9;
+        }
+
+        &__small {
+            font-size: .8em;
+            margin-top: 1em;
+            opacity: .6;
+            line-height: 1.5em;
+        }
+    }
+
+    &__label, &__input, &__select {
+        width: 100%;
+        text-align: left;
+        margin-top: $spacer*1.5;
+    }
+
+    &__label {
+        opacity: .8;
+    }
+
+    &__input, &__select {
+        border: 1px solid rgba(#000,.1);
+        border-radius: $border-radius;
+        background-color: transparent;
+        resize: none;
+        outline: none;
+    }
+
+    &__input {
+        padding: .5em;
+    }
+
+    &__select {
+        -webkit-appearance: none;
+        position: relative;
+
+        select {
+            -webkit-appearance: none;
+            padding: .5em;
+            width: 100%;
+            background-color: transparent;
+            border: 0;
+            outline: none;
+        }
+
+        &__icon {
+            position: absolute;
+            right: .5em;
+            top: 50%;
+            margin-top: -.5em;
+        }
+    }
+
+    &__submit, &__status {
+        margin-top: $spacer*1.5;
+        margin-bottom: $spacer*1.5;
+    }
+
+    &__submit {
+        display: inline-block;
+        border-radius: $border-radius;
+        padding: .8em 1.2em;
+        color: #fff;
+        background-color: $color-main;
+        border: 0;
+    }
+
+    &__status {
+        padding: 1em;
+        border-radius: $border-radius;
+        display: inline-block;
+
+        &.success {
+            background-color: rgba($color-main,.1);
+            border: 1px solid rgba($color-main,.1);
+            color: $color-main;
+        }
+
+        &.error {
+            background-color: rgba(red,.1);
+            border: 1px solid rgba(red,.1);
+            color: red;
+        }
+    }
+}
