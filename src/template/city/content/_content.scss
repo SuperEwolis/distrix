@@ -56,7 +56,6 @@
     &__text {
         margin-top: $header-height;
         text-align: center;
-        line-height: 2em;
 
         @include media-breakpoint-up(lg) {
             padding: $spacer*4 0;
@@ -71,5 +70,29 @@
         }
         @include media-breakpoint-down(sm) {  }
         @include media-breakpoint-down(xs) {  }
+
+        * + h1, * + h2, * + p { margin-top: 1.5em }
+
+        h1 {
+            font-weight: 700;
+            line-height: 1.3em;
+            @include media-breakpoint-up(lg) { font-size: 1.8rem }
+            @include media-breakpoint-down(md) { font-size: 1.6rem }
+            @include media-breakpoint-down(sm) { font-size: 1.5rem }
+        }
+
+        h2 {
+            line-height: 1.3em;
+            @include media-breakpoint-up(lg) { font-size: 1.5rem }
+            @include media-breakpoint-down(md) { font-size: 1.4rem }
+            @include media-breakpoint-down(sm) { font-size: 1.3rem }
+        }
+
+        p {
+            line-height: 1.8em;
+            @include media-breakpoint-up(lg) { font-size: 1rem }
+            @include media-breakpoint-down(md) { font-size: 1rem }
+            @include media-breakpoint-down(sm) { font-size: .9rem }
+        }
     }
 }
